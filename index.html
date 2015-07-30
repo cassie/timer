@@ -1,0 +1,37 @@
+<script>
+  d = document; h = d.documentElement;
+  d.addEventListener('dblclick', function(e) {
+    if (!d.webkitFullscreenElement && h.webkitRequestFullscreen) {
+      h.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT)
+    } else if (d.webkitExitFullscreen) {
+      d.webkitExitFullscreen()
+    }
+  })
+</script>
+<style>
+  body {
+    margin: 0;
+    background: linear-gradient(315deg, #fb4e4e, #ff9879)
+  }
+
+  body:after {
+    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13.999 12'><path fill='#fff' d='M11.941,0.33c-1.783-0.825-4.115-0.049-4.94,1.73c-0.825-1.779-3.157-2.556-4.94-1.73C0.162,1.211-0.746,3.461,0.754,6.115  c1.065,1.889,2.953,3.312,6.247,5.863c3.294-2.551,5.182-3.975,6.247-5.863C14.748,3.461,13.84,1.211,11.941,0.33z'></path></svg>");
+    text-align: center;
+    width: 250px;
+    height: 228px;
+    line-height: 2.1em;
+    color: #fff;
+    display: block;
+    border-bottom-left-radius: 0;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0; right: 0; left: 0; bottom: 0;
+    margin: auto;
+    animation: a 180s linear infinite
+  }
+
+  @keyframes a {
+    to {
+      transform: rotate(360deg)
+    }
+  }
